@@ -443,8 +443,12 @@ with tab_analyse:
                 title="HR Zone Distribution",
                 annotations=[dict(text="HR<br>Zones", x=0.5, y=0.5,
                                   font_size=13, showarrow=False, font_color="#aaa")],
-                **{k: v for k, v in PLOT_LAYOUT.items()},
-                height=300, margin=dict(l=20, r=20, t=50, b=20),
+                paper_bgcolor="#111",
+                plot_bgcolor="#111",
+                font=dict(family="Barlow, sans-serif", color="#aaa", size=11),
+                legend=dict(bgcolor="#1a1a1a", bordercolor="#333", borderwidth=1),
+                height=300,
+                margin=dict(l=20, r=20, t=50, b=20),
             )
             st.plotly_chart(fig_hr_z, use_container_width=True)
 
@@ -470,8 +474,11 @@ with tab_analyse:
             fig_pz.update_layout(
                 title=f"Power Zone Distribution (FTP = {ftp}W)",
                 yaxis_title="% time", showlegend=False,
-                **{k: v for k, v in PLOT_LAYOUT.items()},
-                height=300, margin=dict(l=20, r=20, t=50, b=20),
+                paper_bgcolor="#111",
+                plot_bgcolor="#111",
+                font=dict(family="Barlow, sans-serif", color="#aaa", size=11),
+                height=300,
+                margin=dict(l=20, r=20, t=50, b=20),
             )
             st.plotly_chart(fig_pz, use_container_width=True)
 
